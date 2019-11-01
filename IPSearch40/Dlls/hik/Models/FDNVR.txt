@@ -1,0 +1,3 @@
+﻿##人脸识别NVR设备型号
+iDS-9632NX-I8/FA
+iDS-6704NX/FA-B

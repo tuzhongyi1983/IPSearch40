@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Converters="clr-namespace:MahApps.Metro.Converters"
+                    xmlns:Controls="clr-namespace:MahApps.Metro.Controls"
+                    xmlns:local="clr-namespace:IPSearch40">
+    <Color x:Key="TinyGray">#F7F7F7</Color>
+    <StaticResource x:Key="WindowBackgroundColor" ResourceKey="TinyGray"/>
+    <SolidColorBrush x:Key="TinyGrayBrush" Color="#F7F7F7" />
+    <SolidColorBrush x:Key="RealWhiteBrush" Color="#FEFEFE" />
+    <Style x:Key="AlternatingListViewItemStyle" TargetType="{x:Type ListViewItem}">
+        <Style.Triggers>
+            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                <Setter Property="Background" Value="{DynamicResource RealWhiteBrush}"></Setter>
+            </Trigger>
+            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                <Setter Property="Background" Value="{DynamicResource TinyGrayBrush}"></Setter>
+            </Trigger>
+            <DataTrigger Binding="{Binding Path=IPConflict}">
+                <DataTrigger.Value>true</DataTrigger.Value>
+                <Setter Property="Foreground" Value="Red"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=SettingSucceed}">
+                <DataTrigger.Value>true</DataTrigger.Value>
+                <Setter Property="Foreground" Value="Green"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=SettingSucceed}">
+                <DataTrigger.Value>false</DataTrigger.Value>
+                <Setter Property="Foreground" Value="Red"/>
+            </DataTrigger>
+        </Style.Triggers>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="Height" Value="32"></Setter>
+    </Style>
+</ResourceDictionary>
